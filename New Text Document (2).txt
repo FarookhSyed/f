@@ -1,0 +1,14 @@
+*** Settings ***
+Library     Selenium2Library
+*** Variables ***
+${link}   https://learn.letskodeit.com/p/practice
+${Open Browser}  //*[@id="openwindow"]
+*** Test Cases ***
+test
+    openbrowser  ${link}  gc
+    Maximize Browser Window
+    sleep  2s
+    clickelement   ${Open Browser}
+    Maximize Browser Window
+    sleep  5s
+    closebrowser

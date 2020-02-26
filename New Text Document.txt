@@ -1,0 +1,23 @@
+*** Settings ***
+
+Library     Selenium2Library
+*** Variables ***
+${link}   http://172.168.1.215/ecap/
+${username}  //*[@id="txtId2"]
+${password}  //*[@id="txtPwd2"]
+${login}     //*[@id="imgBtn2"]
+*** Test Cases ***
+case
+        openbrowser     ${link}     gc
+        Wait Until Page Contains    User Name
+        Maximize Browser Window
+        Input Text  ${username}   17K61A05A5
+        Input Password  ${password}   webcap
+        Click Element  ${login}
+        Sleep  5s
+        Click Element  //*[@id="tblscreens"]/tbody/tr[5]/td[2]/div/a
+        Select Radio Button  //*[@id="radPeriod"]   Period
+        sleep  2s
+        Close Browser
+
+
